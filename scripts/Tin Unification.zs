@@ -11,6 +11,7 @@ val TicIngot = <TConstruct:materials:10>;
 var tinIngot = <ore:ingotTin>;
 var tinNugget = <ore:nuggetTin>;
 var tinBlock = <ore:blockTin>;
+var tinDust = <ore:dustTin>;
 
 tinIngot.remove(FIngot);
 tinIngot.remove(RCIngot);
@@ -29,6 +30,9 @@ tinBlock.remove(<TConstruct:MetalBlock:5>);
 
 tinNugget.remove(<TConstruct:materials:21>);
 tinNugget.remove(<Railcraft:nugget:3>);
+
+furnace.remove(FIngot);
+furnace.addRecipe(TFingot, tinDust);
 
 recipes.removeShaped(<Railcraft:tile.railcraft.cube:10>);
 
