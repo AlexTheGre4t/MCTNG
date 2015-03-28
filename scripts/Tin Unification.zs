@@ -38,11 +38,14 @@ tinNugget.remove(<TConstruct:materials:21>);
 tinNugget.remove(<Railcraft:nugget:3>);
 
 furnace.remove(FIngot);
+furnace.remove(TicIngot);
 furnace.addRecipe(TFingot, tinDust);
+furnace.addRecipe(TFingot, <TConstruct:GravelOre:3>);
 
 recipes.removeShaped(<Railcraft:tile.railcraft.cube:10>);
 recipes.removeShaped(<TConstruct:MetalBlock:5>);
 recipes.removeShaped(<TConstruct:materials:10>);
+recipes.removeShapeless(FIngot);
 
 recipes.removeShapeless(<Railcraft:ingot:2>);
 recipes.removeShaped(<Railcraft:tile.railcraft.stair:40>);
