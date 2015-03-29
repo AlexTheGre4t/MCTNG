@@ -1,0 +1,13 @@
+// Tinker's Construct has some inconsistancies regarding the berries.
+// Iron, Copper, and Tin berries are treated as nuggets to make ingots,
+// but Aluminum and Gold are not? pfft... fixing that!
+
+recipes.addShaped(<TConstruct:materials:11>, [
+    [<TConstruct:oreBerries:4>, <TConstruct:oreBerries:4>, <TConstruct:oreBerries:4>],
+    [<TConstruct:oreBerries:4>, <TConstruct:oreBerries:4>, <TConstruct:oreBerries:4>],
+    [<TConstruct:oreBerries:4>, <TConstruct:oreBerries:4>, <TConstruct:oreBerries:4>]]);
+
+recipes.addShaped(<minecraft:gold_ingot>, [
+    [<TConstruct:oreBerries:1>, <TConstruct:oreBerries:1>, <TConstruct:oreBerries:1>],
+    [<TConstruct:oreBerries:1>, <TConstruct:oreBerries:1>, <TConstruct:oreBerries:1>],
+    [<TConstruct:oreBerries:1>, <TConstruct:oreBerries:1>, <TConstruct:oreBerries:1>]]);
