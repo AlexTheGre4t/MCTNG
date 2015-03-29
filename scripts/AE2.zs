@@ -170,13 +170,13 @@ recipes.addShaped(comp64, [
 
 
 //Remove Import, Export & Storage bus, ME Drive
-recipes.remove(<appliedenergistics2:tile.BlockDrive>);
+// recipes.remove(<appliedenergistics2:tile.BlockDrive>);  -- reenabled per conversation on BC Forums
 recipes.remove(<appliedenergistics2:item.ItemMultiPart:260>);
 recipes.remove(<appliedenergistics2:item.ItemMultiPart:240>);
 recipes.remove(<appliedenergistics2:item.ItemMultiPart:220>);
 recipes.remove(<appliedenergistics2:item.ItemMultiPart:340>);
 recipes.remove(<appliedenergistics2:item.ItemMultiPart:480>);
-NEI.hide(<appliedenergistics2:tile.BlockDrive>);
+// NEI.hide(<appliedenergistics2:tile.BlockDrive>);
 NEI.hide(<appliedenergistics2:item.ItemMultiPart:260>);
 NEI.hide(<appliedenergistics2:item.ItemMultiPart:240>);
 NEI.hide(<appliedenergistics2:item.ItemMultiPart:220>);
@@ -208,7 +208,7 @@ var disableEverythingBasically = [
 <appliedenergistics2:tile.BlockEnergyAcceptor:*>,
 <appliedenergistics2:item.ToolMassCannon:*>,
 <appliedenergistics2:item.ToolWirelessTerminal:*>,
-
+<appliedenergistics2:tile.BlockInscriber>,
 
 
 ] as IItemStack[];

@@ -13,6 +13,11 @@ var tinNugget = <ore:nuggetTin>;
 var tinBlock = <ore:blockTin>;
 var tinDust = <ore:dustTin>;
 
+val TFblock = <ThermalFoundation:Storage:1>;
+val FBlock = <Forestry:resourceStorage:2>;
+val RCBlock = <Railcraft:tile.railcraft.cube:10>;
+val TicBlock = <TConstruct:MetalBlock:5>;
+
 tinIngot.remove(FIngot);
 tinIngot.remove(RCIngot);
 tinIngot.remove(TicIngot);
@@ -25,19 +30,22 @@ NEI.hide(<TConstruct:MetalBlock:5>);
 NEI.hide(<TConstruct:materials:21>);
 NEI.hide(<Railcraft:nugget:3>);
 
-tinBlock.remove(<Railcraft:tile.railcraft.cube:10>);
-tinBlock.remove(<TConstruct:MetalBlock:5>);
+tinBlock.remove(FBlock);
+tinBlock.remove(RCBlock);
+tinBlock.remove(TicBlock);
 
 tinNugget.remove(<TConstruct:materials:21>);
 tinNugget.remove(<Railcraft:nugget:3>);
 
 furnace.remove(FIngot);
+furnace.remove(TicIngot);
 furnace.addRecipe(TFingot, tinDust);
+furnace.addRecipe(TFingot, <TConstruct:GravelOre:3>);
 
 recipes.removeShaped(<Railcraft:tile.railcraft.cube:10>);
-
 recipes.removeShaped(<TConstruct:MetalBlock:5>);
 recipes.removeShaped(<TConstruct:materials:10>);
+recipes.removeShapeless(FIngot);
 
 recipes.removeShapeless(<Railcraft:ingot:2>);
 recipes.removeShaped(<Railcraft:tile.railcraft.stair:40>);
@@ -57,6 +65,12 @@ recipes.addShaped(<ThermalFoundation:material:65>, [
 	[<ore:nuggetTin>, <ore:nuggetTin>, <ore:nuggetTin>],
 	[<ore:nuggetTin>, <ore:nuggetTin>, <ore:nuggetTin>],
 	[<ore:nuggetTin>, <ore:nuggetTin>, <ore:nuggetTin>]]);
+
+recipes.removeShaped(<Forestry:resourceStorage:2>);
+recipes.addShaped(<ThermalFoundation:Storage:1>, [
+    [tinIngot, tinIngot, tinIngot],
+    [tinIngot, tinIngot, tinIngot],
+    [tinIngot, tinIngot, tinIngot]]);
 
 furnace.remove(<TConstruct:materials:21>);
 furnace.addRecipe(<ThermalFoundation:material:97>, <TConstruct:oreBerries:3>);

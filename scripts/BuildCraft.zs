@@ -105,3 +105,22 @@ recipes.addShapeless(<BuildCraft|Builders:libraryBlock>, [
   <BuildCraft|Builders:blueprintItem>, <minecraft:bookshelf>,
   <ore:gearIron>, <minecraft:redstone>
 ]);
+
+// conflicting recipe - AdditionalPipes Item Switch pipe = vanilla BuildCraft Stripes pipe
+// made both a little more expensive.
+val ClearGlass = <ore:blockGlassColorless>;
+val GoldGear = <ore:gearGold>;
+val BlackDye = <ore:dyeBlack>;
+val rs = <minecraft:redstone>;
+val bcStripe = <BuildCraft|Transport:item.buildcraftPipe.pipeitemsstripes>;
+val apISwitch = <additionalpipes:item.buildcraftPipe.pipeswitchitems>;
+recipes.removeShaped(apISwitch);
+recipes.addShaped(apISwitch * 8, [
+    [null, rs, null], 
+    [GoldGear, ClearGlass, GoldGear],
+    [null, rs, null]]);
+recipes.removeShaped(bcStripe);
+recipes.addShaped(bcStripe * 8, [
+    [null, BlackDye, null], 
+    [GoldGear, ClearGlass, GoldGear],
+    [null, BlackDye, null]]);
