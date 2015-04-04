@@ -16,7 +16,6 @@ mods.tconstruct.Casting.addTableRecipe(<minecraft:blaze_rod>, <liquid:pyrotheum>
 mods.tconstruct.Casting.addTableRecipe(<minecraft:blaze_rod>, <liquid:pyrotheum>, <TConstruct:metalPattern:14>, false, 20);
 
 
-
 // Soul Sand - Blood of the innocent mixed with the dust of the earth.
 // You can hear the echos of their souls cry out in torment
 val lBlood = <TConstruct:liquid.blood>;
