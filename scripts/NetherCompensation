@@ -26,6 +26,11 @@ val RSBlock = <minecraft:redstone_block>;
 val LavaCrystal = <TConstruct:materials:7>;
 
 // Use a TiC Lava Crystal in place of a RC Cut Firestone in the original recipe... not going to mess with diamond axes just now
+mods.railcraft.RockCrusher.removeRecipe(<Railcraft:firestone.raw>);
+recipes.removeShaped(<Railcraft:firestone.cut>);
+// need to do the NEI.Hide thing.
+
+recipes.removeShaped(<Railcraft:firestone.refined:*>);
 recipes.addShaped(<Railcraft:firestone.refined:4999>, 
     [[LavaBucket, RSBlock, LavaBucket],
      [RSBlock, LavaCrystal, RSBlock],
