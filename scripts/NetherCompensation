@@ -1,11 +1,19 @@
 // - Blaze-rods (probably still overpowered)
 // Netherrack. Source of the eternal flames, ripped from the foundations of Hell itself. 
-// Infused with the fires of damnation, a little stoking can set this damnable rock alight 
-// with a neverending flame.
+// Infused with purest heat and raw energy, a little fermenting can imbue this damnable rock 
+// with neverending flame.
 
-// netherrack Tough Rod, smelted in a furnace
-val blazerod = <minecraft:blaze_rod>;
-furnace.addRecipe(blazerod, <TConstruct:toughRod:7>, 0.5);
+// (old recipe) netherrack Tough Rod, smelted in a furnace
+// val blazerod = <minecraft:blaze_rod>;
+// furnace.addRecipe(blazerod, <TConstruct:toughRod:7>, 0.5);
+
+
+// Smelt Pyrotheum Dust (suggested by Alex)
+//InputStack, OutputFluid, Temperature(max 800), BlockToLookLike* (Optional)
+mods.tconstruct.Smeltery.addMelting(<ThermalFoundation:material:512>, <liquid:pyrotheum> * 100, 200, <minecraft:gold_block>);
+
+mods.tconstruct.Casting.addTableRecipe(<minecraft:blaze_rod>, <liquid:pyrotheum>, <TConstruct:toughRod:7>, true, 20);
+mods.tconstruct.Casting.addTableRecipe(<minecraft:blaze_rod>, <liquid:pyrotheum>, <TConstruct:metalPattern:14>, false, 20);
 
 
 
@@ -54,5 +62,10 @@ recipes.addShaped(<Railcraft:firestone.refined:4999>,
 // A unique game-recipe, but... http://en.wikipedia.org/wiki/Cobalt_extraction_techniques
 // ideally should then be fired in a Blast Furnace to get the purest Cobalt, but I don't think I'll go that far.
 
-mods.tconstruct.Casting.addTableRecipe(<bcadditions:dust:48>, <liquid:nickel.molten>, <Railcraft:dust:1>, true, 20);
-mods.tconstruct.Casting.addTableRecipe(<bcadditions:dust:46>, <liquid:nickel.molten>, <Railcraft:dust:3>, true, 20);
+// RC dusts
+mods.tconstruct.Casting.addTableRecipe(<TConstruct:materials:39>, <liquid:nickel.molten> * 144, <Railcraft:dust:1>, true, 20);
+mods.tconstruct.Casting.addTableRecipe(<TConstruct:materials:38>, <liquid:nickel.molten> * 144, <Railcraft:dust:3>, true, 20);
+
+// TF dusts
+mods.tconstruct.Casting.addTableRecipe(<TConstruct:materials:39>, <liquid:nickel.molten> * 144, <ThermalFoundation:material:16>, true, 20);
+mods.tconstruct.Casting.addTableRecipe(<TConstruct:materials:38>, <liquid:nickel.molten> * 144, <ThermalFoundation:material:3>, true, 20);
