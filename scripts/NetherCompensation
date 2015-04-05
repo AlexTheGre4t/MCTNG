@@ -1,0 +1,70 @@
+// - Blaze-rods (probably still overpowered)
+// Netherrack. Source of the eternal flames, ripped from the foundations of Hell itself. 
+// Infused with purest heat and raw energy, a little fermenting can imbue this damnable rock 
+// with neverending flame.
+
+// (old recipe) netherrack Tough Rod, smelted in a furnace
+// val blazerod = <minecraft:blaze_rod>;
+// furnace.addRecipe(blazerod, <TConstruct:toughRod:7>, 0.5);
+
+
+// Smelt Pyrotheum Dust (suggested by Alex)
+//InputStack, OutputFluid, Temperature(max 800), BlockToLookLike* (Optional)
+mods.tconstruct.Smeltery.addMelting(<ThermalFoundation:material:512>, <liquid:pyrotheum> * 100, 200, <minecraft:gold_block>);
+
+mods.tconstruct.Casting.addTableRecipe(<minecraft:blaze_rod>, <liquid:pyrotheum>, <TConstruct:toughRod:7>, true, 20);
+mods.tconstruct.Casting.addTableRecipe(<minecraft:blaze_rod>, <liquid:pyrotheum>, <TConstruct:metalPattern:14>, false, 20);
+
+
+// Soul Sand - Blood of the innocent mixed with the dust of the earth.
+// You can hear the echos of their souls cry out in torment
+val lBlood = <TConstruct:liquid.blood>;
+val SSand = <minecraft:soul_sand>;
+val Gravel = <minecraft:gravel>;
+mods.tconstruct.Casting.addBasinRecipe(SSand, <liquid:blood>, Gravel, true, 20);
+
+
+
+// RC Firestone
+// Truly a creation of the devil himself.
+
+val LavaBucket = <minecraft:lava_bucket>;
+val RSBlock = <minecraft:redstone_block>;
+val LavaCrystal = <TConstruct:materials:7>;
+
+// Use a TiC Lava Crystal in place of a RC Cut Firestone in the original recipe... not going to mess with diamond axes just now
+mods.railcraft.RockCrusher.removeRecipe(<Railcraft:firestone.raw>);
+recipes.removeShaped(<Railcraft:firestone.cut>);
+// need to do the NEI.Hide thing.
+
+recipes.removeShaped(<Railcraft:firestone.refined:*>);
+recipes.addShaped(<Railcraft:firestone.refined:4999>, 
+    [[LavaBucket, RSBlock, LavaBucket],
+     [RSBlock, LavaCrystal, RSBlock],
+     [LavaBucket, RSBlock, LavaBucket]]);
+
+// Same recipe to repair a cracked Firestone
+recipes.addShaped(<Railcraft:firestone.refined:4999>, 
+    [[LavaBucket, RSBlock, LavaBucket],
+     [RSBlock, <Railcraft:firestone.cracked:*>, RSBlock],
+     [LavaBucket, RSBlock, LavaBucket]]);
+
+
+
+// They say you can't take it with you when you go.
+// I say... watch me try.
+
+// TiC Nether Ores, Cobalt and Ardite
+// Liquid Nickel onto Sulfur on a Table = Cobalt Dust
+// Liquid Nickel onto Coal Dust on a table = Ardite Dust
+
+// A unique game-recipe, but... http://en.wikipedia.org/wiki/Cobalt_extraction_techniques
+// ideally should then be fired in a Blast Furnace to get the purest Cobalt, but I don't think I'll go that far.
+
+// RC dusts
+mods.tconstruct.Casting.addTableRecipe(<TConstruct:materials:39>, <liquid:nickel.molten> * 144, <Railcraft:dust:1>, true, 20);
+mods.tconstruct.Casting.addTableRecipe(<TConstruct:materials:38>, <liquid:nickel.molten> * 144, <Railcraft:dust:3>, true, 20);
+
+// TF dusts
+mods.tconstruct.Casting.addTableRecipe(<TConstruct:materials:39>, <liquid:nickel.molten> * 144, <ThermalFoundation:material:16>, true, 20);
+mods.tconstruct.Casting.addTableRecipe(<TConstruct:materials:38>, <liquid:nickel.molten> * 144, <ThermalFoundation:material:3>, true, 20);
